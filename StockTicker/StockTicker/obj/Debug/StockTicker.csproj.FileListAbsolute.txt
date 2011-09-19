@@ -1,0 +1,15 @@
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\StockTicker.exe
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\StockTicker.pdb
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\obj\Debug\StockTicker.Properties.Resources.resources
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\obj\Debug\StockTicker.csproj.GenerateResource.Cache
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\obj\Debug\StockTicker.exe
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\obj\Debug\StockTicker.pdb
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\StockTicker.exe.config
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\obj\Debug\StockTicker.WinForms.frmMain.resources
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\Google.GData.AccessControl.dll
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\Google.GData.Analytics.dll
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\Google.GData.Apps.dll
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\Google.GData.Client.dll
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\Google.GData.Extensions.dll
+C:\Users\Postal\Documents\Visual Studio 2008\Projects\StockTicker\StockTicker\bin\Debug\Google.GData.GoogleBase.dll

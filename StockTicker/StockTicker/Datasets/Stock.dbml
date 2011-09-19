@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="CCSC" Class="StockDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MONSTER\SQL2005;Initial Catalog=CCSC;Integrated Security=True" SettingsObjectName="StockTicker.Properties.Settings" SettingsPropertyName="CCSCConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.StockData" Member="StockDatas">
+    <Type Name="StockData">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Symbol" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Price_Open" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Price_High" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Price_Low" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Price_Close" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Volume" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Unknown_Value" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
