@@ -49,8 +49,16 @@ namespace StockTicker.Classes
 
         private void Init()
         {
-            this.db = new StockDataContext();
+            this.db = new StockDataContext(); 
+        
         }
+        
+
+        private void Init()
+        {
+            
+        }
+
 
         /// <summary>
         /// Gets the current file number that is being worked on.
@@ -165,6 +173,12 @@ namespace StockTicker.Classes
             this.OnFileComplete(new EventArgs(), sSymbol);
             this.iCurrentFile++;
         }
+
+        private void LoadStockList()
+        {
+            
+        }
+
 
 
         protected virtual void OnFileComplete(EventArgs e, string sSymbol)
