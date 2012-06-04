@@ -10,11 +10,11 @@ using StockTicker.Classes;
 
 namespace StockTicker.WinForms
 {
-    public partial class frmMain : Form
+    public partial class MainForm : Form
     {
         private DataLib dlLib;
 
-        public frmMain()
+        public MainForm()
         {
             InitializeComponent();
             this.fbdOpen.SelectedPath = "C:\\Users\\Postal\\Documents\\Visual Studio 2008\\Projects\\StockTicker\\StockTicker";
@@ -133,6 +133,19 @@ namespace StockTicker.WinForms
         {
             DataControler dc = new DataControler();
             dc.GetValue("GOOG", new DateTime(2009, 1, 1), "Price_Open");
+        }
+
+        private void btnTestDBConnection_Click(object sender, EventArgs e)
+        {
+            /*
+             *  stocksim.signaturepens.ca
+             *  username: stockbot
+             *  password: SBHelloWorld
+             *  database: signaturepens_stocksim
+             *  server:   lute:yarber
+             */
+            DBConnect db = new DBConnect();
+            db.Init("stocksim.signaturepens.ca", "signaturepens_stocksim", "stockbot", "SBHelloWorld");
         }
     }
 }

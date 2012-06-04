@@ -1,5 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
+/*
+ *  stocksim.signaturepens.ca
+ *  username: stockbot
+ *  password: SBHelloWorld
+ *  database: signaturepens_stocksim
+ *  server:   lute:yarber
+ */
 
 namespace StockTicker.Classes
 {
@@ -14,21 +24,24 @@ namespace StockTicker.Classes
         //Constructor
         public DBConnect()
         {
-            Init();
+            //Init();
         }
 
        
-        private void Init(String serverName, String databaseName,String uid, String password)
+        public void Init(String serverName, String databaseName, String uid, String password)
         {
-            server = serverName;
-            database = databaseName;
-            uid = uid;
-            password = password;
+            this.server = serverName;
+            this.database = databaseName;
+            this.uid = uid;
+            this.password = password;
+
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";"
-            + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-            connection = new MySqlConnection(connectionString);
+            connectionString =    "SERVER=" + this.server + ";"
+                                + "DATABASE=" + this.database + ";"
+                                + "UID=" + this.uid + ";"
+                                + "PASSWORD=" + this.password + ";";
+            this.connection = new MySqlConnection(connectionString);
+            this.connection.Open();
         }
 
 
@@ -98,11 +111,15 @@ namespace StockTicker.Classes
         //Select statement
         public List<string>[] Select()
         {
+            // TODO: populate list with results.
+
+            return null;
         }
 
         //Count statement
         public int Count()
         {
+            return -1;
         }
 
         //Backup

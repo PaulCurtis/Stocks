@@ -25,3 +25,15 @@ C:\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.csproj.GenerateResource.
 C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\StockTicker.exe.config
 C:\Repositories\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.exe
 C:\Repositories\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.pdb
+C:\Repositories\Stocks\StockTicker\StockTicker\obj\Debug\ResolveAssemblyReference.cache
+C:\Repositories\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.WinForms.MainForm.resources
+C:\Repositories\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.Properties.Resources.resources
+C:\Repositories\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.csproj.GenerateResource.Cache
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\StockTicker.exe
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\StockTicker.pdb
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\Google.GData.AccessControl.dll
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\Google.GData.Analytics.dll
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\Google.GData.Apps.dll
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\Google.GData.Client.dll
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\Google.GData.Extensions.dll
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\Google.GData.GoogleBase.dll

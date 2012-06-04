@@ -15,7 +15,7 @@ namespace StockTicker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WinForms.frmMain());
+            Application.Run(new WinForms.MainForm());
         }
     }
 }
