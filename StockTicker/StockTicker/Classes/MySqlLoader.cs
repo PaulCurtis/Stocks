@@ -1,9 +1,47 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
+using System;
+using System.IO;
+
 
 namespace StockTicker.Classes
 {
-    public class DBConnect
+
+    class InputParser
+    {
+
+        private StreamReader sr;
+ 
+
+        public InputParser(Sting InputFile)
+        {
+            sr = new StreamReader(InputFile); 
+
+        }
+
+        public void parseFile ()
+        {
+            String line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                // parse each component of the line
+                // after the parse call the insert
+            
+            
+            
+            
+            
+            }// Closes the !EOF while
+
+
+        }// Closes the ParseFile
+
+    }// Closes the InputParser
+
+
+
+    
+    class DBConnect
     {
         private MySqlConnection connection;
         private string server;
@@ -81,13 +119,15 @@ namespace StockTicker.Classes
         }// Closes CloseConnection()
 
         //Insert statement
-        public void Insert()
+        public void InsertStock(Sting tableName, String date, String symbol, Decimal open, Decimal close, Decimal high, Decimal low, Decimal volume, Decimal AdjClose )
         {
         }
 
+
         //Update statement
-        public void Update()
+        public void Update(String TableName, String Column, String Value)
         {
+
         }
 
         //Delete statement
