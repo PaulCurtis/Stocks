@@ -75,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stock.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\MySqlLoader.cs" />
     <Compile Include="WinForms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
