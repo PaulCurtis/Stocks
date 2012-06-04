@@ -22,3 +22,6 @@ C:\Stocks\StockTicker\StockTicker\obj\Debug\ResolveAssemblyReference.cache
 C:\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.WinForms.frmMain.resources
 C:\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.Properties.Resources.resources
 C:\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.csproj.GenerateResource.Cache
+C:\Repositories\Stocks\StockTicker\StockTicker\bin\Debug\StockTicker.exe.config
+C:\Repositories\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.exe
+C:\Repositories\Stocks\StockTicker\StockTicker\obj\Debug\StockTicker.pdb

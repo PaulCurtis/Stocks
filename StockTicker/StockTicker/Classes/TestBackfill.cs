@@ -7,6 +7,7 @@ namespace StockTicker.Classes
 {
     public class TestBackfill
     {
+        private int i = 0;
 
         public TestBackfill(DateTime dtStart, DateTime dtEnd)
         {
