@@ -63,7 +63,6 @@
     <Compile Include="Classes\DataLib.cs" />
     <Compile Include="Classes\GoogleFinanceLib.cs" />
     <Compile Include="Classes\Simulation.cs" />
-    <Compile Include="Classes\StockObject.cs" />
     <Compile Include="Classes\TestBackfill.cs" />
     <Compile Include="Classes\TestExecution.cs" />
     <Compile Include="Datasets\StockDataSet.Designer.cs">

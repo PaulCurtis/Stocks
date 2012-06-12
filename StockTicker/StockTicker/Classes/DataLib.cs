@@ -90,13 +90,13 @@ namespace StockTicker.Classes
             }
         }
 
-        public List<StockObject> LoadFile(string sFilename)
+        public void LoadFile(string sFilename)
         {
             string sSymbol = this.GetSymbol(sFilename);
             List<string[]> lCurrentFile = this.ParseFile(sFilename);
             this.iFileRows = lCurrentFile.Count;
             this.iCurrentRow = 1;
-            return this.ParseStockList(sSymbol, lCurrentFile);
+            this.ParseStockList(sSymbol, lCurrentFile);
         }
         public void LoadAllData()
         {
@@ -136,60 +136,38 @@ namespace StockTicker.Classes
 
             return lParsedData;
         }
-        private List<StockObject> ParseStockList(string sSymbol, List<string[]> lStockInfo)
+        private void ParseStockList(string sSymbol, List<string[]> lStockInfo)
         {
-            List<StockObject> stocks = new List<StockObject>();
-            //var currentStock = from cs in db.StockDatas
-            //                   where cs.Symbol == sSymbol
-            //                   select cs;
-            //db.StockDatas.DeleteAllOnSubmit(currentStock);
-            //db.SubmitChanges();
+            var currentStock = from cs in db.StockDatas
+                               where cs.Symbol == sSymbol
+                               select cs;
+            db.StockDatas.DeleteAllOnSubmit(currentStock);
+            db.SubmitChanges();
 
             foreach (string[] sStockDay in lStockInfo)
             {
-                //StockData sd = new StockData();
-                //sd.Id = Guid.NewGuid();
-                //sd.Symbol = sSymbol;
-                //sd.Day = dtDate;
-                //sd.Price_Open = decimal.Parse(sStockDay[1]);
-                //sd.Price_High = decimal.Parse(sStockDay[2]);
-                //sd.Price_Low = decimal.Parse(sStockDay[3]);
-                //sd.Price_Close = decimal.Parse(sStockDay[4]);
-                //sd.Volume = int.Parse(sStockDay[5]);
-                //// Adjusted Close
-                //sd.Unknown_Value = decimal.Parse(sStockDay[6]);
-                //db.StockDatas.InsertOnSubmit(sd);
-
                 DateTime dtDate = DateTime.Parse(sStockDay[0]);
-                StockObject stock = new StockObject();
-                stock.Symbol = sSymbol;
-                stock.Day = dtDate;
-                stock.Open = decimal.Parse(sStockDay[1]);
-                stock.High = decimal.Parse(sStockDay[2]);
-                stock.Low = decimal.Parse(sStockDay[3]);
-                stock.Close = decimal.Parse(sStockDay[4]);
-                stock.Volume = int.Parse(sStockDay[5]);
-                stock.AdjustedClose = decimal.Parse(sStockDay[6]);
 
-                stocks.Add(stock);
+                StockData sd = new StockData();
+                sd.Id = Guid.NewGuid();
+                sd.Symbol = sSymbol;
+                sd.Day = dtDate;
+                sd.Price_Open = decimal.Parse(sStockDay[1]);
+                sd.Price_High = decimal.Parse(sStockDay[2]);
+                sd.Price_Low = decimal.Parse(sStockDay[3]);
+                sd.Price_Close = decimal.Parse(sStockDay[4]);
+                sd.Volume = int.Parse(sStockDay[5]);
+                sd.Unknown_Value = decimal.Parse(sStockDay[6]);
 
+                db.StockDatas.InsertOnSubmit(sd);
                 this.OnStockDayComplete(new EventArgs(), sSymbol, dtDate);
             }
 
-            //db.SubmitChanges();
+            db.SubmitChanges();
             this.OnFileComplete(new EventArgs(), sSymbol);
             this.iCurrentFile++;
-
-            return stocks;
         }
 
-        public string[] FileList
-        {
-            get
-            {
-                return this.sFileEntries;
-            }
-        }
         private void LoadStockList()
         {
             

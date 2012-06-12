@@ -41,7 +41,7 @@ namespace StockTicker.Classes
                                 + "UID=" + this.uid + ";"
                                 + "PASSWORD=" + this.password + ";";
             this.connection = new MySqlConnection(connectionString);
-            bool bOpen = this.OpenConnection();
+            this.connection.Open();
         }
 
 
@@ -94,60 +94,14 @@ namespace StockTicker.Classes
         }// Closes CloseConnection()
 
         //Insert statement
-        public void Insert(StockObject stock)
+        public void Insert()
         {
-            try
-            {
-                string sql = "insert into Stock "
-                    + " ( Date, Symbol, Open, Close, High, Low, Volume, AdjClose ) "
-                    + " values ( "
-                    + "'" + stock.Day.ToString("yyyy-MM-dd") + "', "
-                    + "'" + stock.Symbol + "', "
-                    + stock.Open + ", "
-                    + stock.Close + ", "
-                    + stock.High + ", "
-                    + stock.Low + ", "
-                    + stock.Volume + ", "
-                    + stock.AdjustedClose + " ) ";
-                MySqlCommand command = this.connection.CreateCommand();
-                command.CommandText = sql;
-                MySqlDataReader result = command.ExecuteReader();
-                result.Close();
-            }
-            catch (MySqlException ex)
-            {
-                System.Console.Error.Write(ex.ToString());
-            }
-
-
         }
 
         //Update statement
-        public void Update(string table, string id, string column, short value)
+        public void Update()
         {
-            try
-            {
-
-            }
-            catch (MySqlException ex)
-            {
-                System.Console.Error.Write(ex.ToString());
-            }
         }
-        // Overloaded for a string
-        public void Update(string table, string id, string column, string value)
-        {
-            try
-            {
-
-            }
-            catch (MySqlException ex)
-            {
-                System.Console.Error.Write(ex.ToString());
-            }
-        }
-
-
 
         //Delete statement
         public void Delete()
@@ -162,7 +116,21 @@ namespace StockTicker.Classes
             return null;
         }
 
-        
+        //Count statement
+        public int Count()
+        {
+            return -1;
+        }
+
+        //Backup
+        public void Backup()
+        {
+        }
+
+        //Restore
+        public void Restore()
+        {
+        }
 
     }    
 } // Ends the StockTicker Classes name space

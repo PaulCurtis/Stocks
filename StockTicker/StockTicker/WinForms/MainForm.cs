@@ -13,7 +13,6 @@ namespace StockTicker.WinForms
     public partial class MainForm : Form
     {
         private DataLib dlLib;
-        private DBConnect db;
 
         public MainForm()
         {
@@ -22,9 +21,6 @@ namespace StockTicker.WinForms
             this.ofdOpen.InitialDirectory = "C:\\Users\\Postal\\Documents\\Visual Studio 2008\\Projects\\StockTicker\\StockTicker";
 
             this.ClearFields();
-
-            this.db = new DBConnect();
-            this.db.Init("stocksim.signaturepens.ca", "signaturepens_stocksim", "stockbot", "SBHelloWorld");
         }
 
         private void tsmiExit_Click(object sender, EventArgs e)
@@ -60,15 +56,7 @@ namespace StockTicker.WinForms
 
         private void bwLoadData_DoWork(object sender, DoWorkEventArgs e)
         {
-            //this.dlLib.LoadAllData();
-            foreach (string sFilename in this.dlLib.FileList)
-            {
-                List<StockObject> stocks = this.dlLib.LoadFile(sFilename);
-                foreach (StockObject stock in stocks)
-                {
-                    this.db.Insert(stock);
-                }
-            }
+            this.dlLib.LoadAllData();
         }
         private void bwLoadData_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -84,11 +72,7 @@ namespace StockTicker.WinForms
         }
         private void bwLoadFile_DoWork(object sender, DoWorkEventArgs e)
         {
-            List<StockObject> stocks = this.dlLib.LoadFile((string)e.Argument);
-            foreach(StockObject stock in stocks)
-            {
-                this.db.Insert(stock);
-            }
+            this.dlLib.LoadFile((string)e.Argument);
         }
         private void bwLoadFile_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -111,7 +95,7 @@ namespace StockTicker.WinForms
         {
             if (fbdOpen.ShowDialog(this).Equals(DialogResult.OK))
             {
-                this.dlLib = new DataLib(fbdOpen.SelectedPath);
+                this.dlLib = new DataLib();
 
                 this.dlLib.FileComplete += new FileCompleteEventHandler(dlLib_FileComplete);
                 this.pbMain.Value = 0;
