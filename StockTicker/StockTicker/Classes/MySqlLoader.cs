@@ -1,47 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System;
-using System.IO;
 
+/*
+ *  stocksim.signaturepens.ca
+ *  username: stockbot
+ *  password: SBHelloWorld
+ *  database: signaturepens_stocksim
+ *  server:   lute:yarber
+ */
 
 namespace StockTicker.Classes
 {
-
-    class InputParser
-    {
-
-        private StreamReader sr;
- 
-
-        public InputParser(Sting InputFile)
-        {
-            sr = new StreamReader(InputFile); 
-
-        }
-
-        public void parseFile ()
-        {
-            String line;
-            while ((line = sr.ReadLine()) != null)
-            {
-                // parse each component of the line
-                // after the parse call the insert
-            
-            
-            
-            
-            
-            }// Closes the !EOF while
-
-
-        }// Closes the ParseFile
-
-    }// Closes the InputParser
-
-
-
-    
-    class DBConnect
+    public class DBConnect
     {
         private MySqlConnection connection;
         private string server;
@@ -52,21 +24,24 @@ namespace StockTicker.Classes
         //Constructor
         public DBConnect()
         {
-            Init();
+            //Init();
         }
 
        
-        private void Init(String serverName, String databaseName,String uid, String password)
+        public void Init(String serverName, String databaseName, String uid, String password)
         {
-            server = serverName;
-            database = databaseName;
-            uid = uid;
-            password = password;
+            this.server = serverName;
+            this.database = databaseName;
+            this.uid = uid;
+            this.password = password;
+
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";"
-            + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-            connection = new MySqlConnection(connectionString);
+            connectionString =    "SERVER=" + this.server + ";"
+                                + "DATABASE=" + this.database + ";"
+                                + "UID=" + this.uid + ";"
+                                + "PASSWORD=" + this.password + ";";
+            this.connection = new MySqlConnection(connectionString);
+            this.connection.Open();
         }
 
 
@@ -119,15 +94,13 @@ namespace StockTicker.Classes
         }// Closes CloseConnection()
 
         //Insert statement
-        public void InsertStock(Sting tableName, String date, String symbol, Decimal open, Decimal close, Decimal high, Decimal low, Decimal volume, Decimal AdjClose )
+        public void Insert()
         {
         }
 
-
         //Update statement
-        public void Update(String TableName, String Column, String Value)
+        public void Update()
         {
-
         }
 
         //Delete statement
@@ -138,11 +111,15 @@ namespace StockTicker.Classes
         //Select statement
         public List<string>[] Select()
         {
+            // TODO: populate list with results.
+
+            return null;
         }
 
         //Count statement
         public int Count()
         {
+            return -1;
         }
 
         //Backup

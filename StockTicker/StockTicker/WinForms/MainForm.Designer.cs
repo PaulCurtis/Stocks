@@ -1,6 +1,6 @@
 ﻿namespace StockTicker.WinForms
 {
-    partial class frmMain
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,11 +40,12 @@
             this.lblCurrentStock = new System.Windows.Forms.Label();
             this.tbCurrentStock = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.fbdOpen = new System.Windows.Forms.FolderBrowserDialog();
             this.bwLoadData = new System.ComponentModel.BackgroundWorker();
             this.bwLoadFile = new System.ComponentModel.BackgroundWorker();
             this.ofdOpen = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTestDBConnection = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +119,7 @@
             this.tlpMain.Controls.Add(this.tbCurrentStock, 1, 2);
             this.tlpMain.Controls.Add(this.lblStatus, 0, 0);
             this.tlpMain.Controls.Add(this.button1, 2, 1);
+            this.tlpMain.Controls.Add(this.btnTestDBConnection, 3, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 24);
             this.tlpMain.Name = "tlpMain";
@@ -170,6 +172,16 @@
             this.lblStatus.Text = "Loading Data...";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(210, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // bwLoadData
             // 
             this.bwLoadData.WorkerReportsProgress = true;
@@ -189,17 +201,17 @@
             this.ofdOpen.FileName = "*.csv";
             this.ofdOpen.Title = "Select Stock File to Open";
             // 
-            // button1
+            // btnTestDBConnection
             // 
-            this.button1.Location = new System.Drawing.Point(210, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnTestDBConnection.Location = new System.Drawing.Point(437, 16);
+            this.btnTestDBConnection.Name = "btnTestDBConnection";
+            this.btnTestDBConnection.Size = new System.Drawing.Size(164, 129);
+            this.btnTestDBConnection.TabIndex = 6;
+            this.btnTestDBConnection.Text = "Test DB Connection";
+            this.btnTestDBConnection.UseVisualStyleBackColor = true;
+            this.btnTestDBConnection.Click += new System.EventHandler(this.btnTestDBConnection_Click);
             // 
-            // frmMain
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,7 +219,7 @@
             this.Controls.Add(this.tlpMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmMain";
+            this.Name = "MainForm";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tlpMain.ResumeLayout(false);
@@ -236,6 +248,7 @@
         private System.Windows.Forms.OpenFileDialog ofdOpen;
         private System.Windows.Forms.ToolStripMenuItem tsmiGoogleFinanceLogin;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTestDBConnection;
     }
 }
 

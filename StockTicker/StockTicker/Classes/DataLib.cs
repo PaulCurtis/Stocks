@@ -54,12 +54,6 @@ namespace StockTicker.Classes
         }
         
 
-        private void Init()
-        {
-            
-        }
-
-
         /// <summary>
         /// Gets the current file number that is being worked on.
         /// </summary>
